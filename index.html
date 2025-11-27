@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SDN Contoh Sejahtera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT AWESOME UNTUK ICON SERAGAM -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            padding-bottom: 70px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e88e5, #42a5f5);
+            color: #fff;
+            padding: 16px 14px 14px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header .school-name { font-size: 18px; font-weight: bold; }
+        header .school-sub { font-size: 12px; opacity: .9; margin-top: 2px; }
+        header .tagline { margin-top: 8px; font-size: 11px; opacity: .9; }
+
+        .container {
+            padding: 12px 14px 16px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 14px;
+            box-shadow: 0 3px 8px rgba(0,0,0,.08);
+            margin-bottom: 14px;
+        }
+
+        .hero-title { font-size: 16px; font-weight: 600; }
+        .hero-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1e88e5;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        section { display: none; }
+        section.active { display: block; }
+        section h2 { font-size: 15px; margin-bottom: 8px; }
+
+        .card {
+            background: #fff;
+            padding: 10px 12px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.06);
+            margin-bottom: 10px;
+        }
+
+        .card-title { font-size: 13px; font-weight: bold; }
+        .card-meta { font-size: 11px; color: #777; margin: 5px 0; }
+        .card-desc { font-size: 12px; color: #555; }
+
+        /* ==== GALERI GRID ==== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.08);
+            transition: .3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* FOOTER NAV */
+        .footer-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #fff;
+            box-shadow: 0 -3px 10px rgba(0,0,0,.1);
+            padding: 6px 0 8px;
+            z-index: 20;
+        }
+
+        .footer-nav-inner {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav-item {
+            text-align: center;
+            font-size: 11px;
+            color: #75829a;
+            cursor: pointer;
+        }
+
+        .nav-icon { font-size: 18px; display: block; }
+        .nav-item.active { color: #1e88e5; font-weight: bold; }
+
+        @media (min-width: 768px) {
+            .nav-icon { font-size: 19px; }
+            .gallery-grid img { height: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="school-name">SDN Contoh Sejahtera</div>
+    <div class="school-sub">Jl. Pendidikan No. 123, Kota Belajar</div>
+    <div class="tagline">“Berkarakter, Berprestasi, Berbudaya Digital”</div>
+</header>
+
+<main class="container">
+
+    <!-- HERO -->
+    <div class="hero-card">
+        <div class="hero-badge">Info Sekolah</div>
+        <div class="hero-title">Selamat Datang di Website Resmi SDN Contoh Sejahtera</div>
+        <p class="hero-text">
+            Akses berita sekolah, profil, guru, galeri, dan layanan sekolah langsung dari HP Anda.
+        </p>
+    </div>
+
+    <!-- BERANDA -->
+    <section id="section-beranda" class="active">
+        <h2>Pengumuman Terbaru</h2>
+
+        <div class="card">
+            <div class="card-title">PPDB 2025/2026 Dibuka</div>
+            <div class="card-meta">10 Januari 2025</div>
+            <div class="card-desc">
+                Pendaftaran online tersedia pada menu <b>PPDB</b>.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Kegiatan Class Meeting</div>
+            <div class="card-meta">05 Januari 2025</div>
+            <div class="card-desc">
+                Lomba futsal, seni, dan cerdas cermat.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="section-profil">
+        <h2>Profil Sekolah</h2>
+        <p>SDN Contoh Sejahtera berkomitmen mencetak siswa yang berakhlak, berprestasi, dan melek teknologi.</p>
+    </section>
+
+    <!-- GURU -->
+    <section id="section-guru">
+        <h2>Data Guru</h2>
+
+        <div class="card">
+            <div class="card-title">Bapak Andi Saputra</div>
+            <div class="card-meta">Kepala Sekolah</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Ibu Rina Kartika</div>
+            <div class="card-meta">Guru Kelas 1</div>
+        </div>
+    </section>
+
+    <!-- GALERI BARU -->
+    <section id="section-galeri">
+        <h2>Galeri Kegiatan Belajar</h2>
+
+        <div class="gallery-grid">
+
+            <!-- Ganti dengan foto-foto sekolahmu -->
+            <img src="https://picsum.photos/200/150?random=1">
+            <img src="https://picsum.photos/200/150?random=2">
+            <img src="https://picsum.photos/200/150?random=3">
+            <img src="https://picsum.photos/200/150?random=4">
+            <img src="https://picsum.photos/200/150?random=5">
+            <img src="https://picsum.photos/200/150?random=6">
+
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="section-kontak">
+        <h2>Kontak Sekolah</h2>
+        <p>Untuk pertanyaan, silakan kirim pesan melalui WhatsApp atau datang ke sekolah.</p>
+    </section>
+
+</main>
+
+<!-- FOOTER NAV -->
+<nav class="footer-nav">
+    <div class="footer-nav-inner">
+
+        <div class="nav-item active" data-target="section-beranda">
+            <span class="nav-icon"><i class="fa-solid fa-house"></i></span>Beranda
+        </div>
+
+        <div class="nav-item" data-target="section-profil">
+            <span class="nav-icon"><i class="fa-solid fa-school"></i></span>Profil
+        </div>
+
+        <div class="nav-item" data-target="section-guru">
+            <span class="nav-icon"><i class="fa-solid fa-chalkboard-user"></i></span>Guru
+        </div>
+
+        <div class="nav-item" data-target="section-galeri">
+            <span class="nav-icon"><i class="fa-solid fa-image"></i></span>Galeri
+        </div>
+
+        <div class="nav-item" data-link="https://forms.gle/CONTOH_LINK_PPDB">
+            <span class="nav-icon"><i class="fa-solid fa-user-plus"></i></span>PPDB
+        </div>
+
+    </div>
+</nav>
+
+<script>
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('main section');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const link = item.getAttribute('data-link');
+            const targetId = item.getAttribute('data-target');
+
+            // Jika menu PPDB
+            if (link) {
+                window.open(link, '_blank');
+                return;
+            }
+
+            navItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
