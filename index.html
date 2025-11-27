@@ -2,180 +2,468 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>SDN Contoh Sejahtera</title>
+    <title>YPP An-Nur Al-Mustafa Cikarang Barat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FONT AWESOME UNTUK ICON SERAGAM -->
+    <!-- FONT AWESOME -->
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- FONT POPPINS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Poppins",sans-serif;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #222;
-            padding-bottom: 70px;
+        body{
+            background:#f5f7fb;
+            color:#222;
+            padding-bottom:75px;
         }
 
-        header {
-            background: linear-gradient(135deg, #1e88e5, #42a5f5);
-            color: #fff;
-            padding: 16px 14px 14px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+        /* HEADER BARU */
+        header{
+            background:linear-gradient(135deg,#1e88e5,#42a5f5);
+            color:#fff;
+            padding:10px 14px;
+            position:sticky;
+            top:0;
+            z-index:30;
         }
 
-        header .school-name { font-size: 18px; font-weight: bold; }
-        header .school-sub { font-size: 12px; opacity: .9; margin-top: 2px; }
-        header .tagline { margin-top: 8px; font-size: 11px; opacity: .9; }
-
-        .container {
-            padding: 12px 14px 16px;
-            max-width: 900px;
-            margin: auto;
+        .header-inner{
+            display:flex;
+            align-items:center;
+            gap:12px;
         }
 
-        .hero-card {
-            background: #fff;
-            border-radius: 14px;
-            padding: 14px;
-            box-shadow: 0 3px 8px rgba(0,0,0,.08);
-            margin-bottom: 14px;
+        .school-logo{
+            width:48px;
+            height:48px;
+            border-radius:8px;
+            background:#fff;
+            padding:3px;
+            object-fit:cover;
+            box-shadow:0 2px 5px rgba(0,0,0,.25);
         }
 
-        .hero-title { font-size: 16px; font-weight: 600; }
-        .hero-badge {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1e88e5;
-            padding: 4px 8px;
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 6px;
+        .header-text{
+            line-height:1.1;
         }
 
-        section { display: none; }
-        section.active { display: block; }
-        section h2 { font-size: 15px; margin-bottom: 8px; }
-
-        .card {
-            background: #fff;
-            padding: 10px 12px;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0,0,0,.06);
-            margin-bottom: 10px;
+        .school-title{
+            font-size:14px;
+            font-weight:600;
         }
 
-        .card-title { font-size: 13px; font-weight: bold; }
-        .card-meta { font-size: 11px; color: #777; margin: 5px 0; }
-        .card-desc { font-size: 12px; color: #555; }
-
-        /* ==== GALERI GRID ==== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
-            margin-top: 10px;
+        .container{
+            padding:14px;
+            max-width:900px;
+            margin:auto;
         }
 
-        .gallery-grid img {
-            width: 100%;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.08);
-            transition: .3s;
+        /* BANNER SLIDE */
+        .banner-wrapper{
+            width:100%;
+            height:150px;
+            overflow:hidden;
+            border-radius:12px;
+            margin-bottom:14px;
+            position:relative;
+            box-shadow:0 3px 8px rgba(0,0,0,.1);
+        }
+        .banner-images{
+            display:flex;
+            width:300%;
+            height:100%;
+            transition:transform .6s ease;
+        }
+        .banner-images img{
+            width:100%;
+            height:150px;
+            object-fit:cover;
+        }
+        .banner-indicator{
+            position:absolute;
+            bottom:6px;
+            width:100%;
+            display:flex;
+            justify-content:center;
+            gap:6px;
+        }
+        .dot{
+            width:8px;
+            height:8px;
+            border-radius:50%;
+            background:#ffffff80;
+        }
+        .dot.active{
+            background:#fff;
+            transform:scale(1.2);
         }
 
-        .gallery-grid img:hover {
-            transform: scale(1.05);
+        /* HERO */
+        .hero-card{
+            background:#fff;
+            border-radius:14px;
+            padding:14px;
+            margin-bottom:14px;
+            box-shadow:0 3px 8px rgba(0,0,0,.08);
+        }
+        .hero-title{
+            font-size:16px;
+            font-weight:600;
+        }
+        .hero-badge{
+            display:inline-block;
+            background:#e3f2fd;
+            color:#1e88e5;
+            padding:4px 8px;
+            font-size:11px;
+            border-radius:999px;
+            font-weight:600;
+            margin-bottom:6px;
+        }
+
+        /* SECTIONS */
+        section{
+            display:none;
+        }
+        section.active{
+            display:block;
+        }
+        section h2{
+            font-size:16px;
+            margin-bottom:8px;
+            font-weight:600;
+        }
+
+        /* CARD */
+        .card{
+            background:#fff;
+            padding:12px;
+            border-radius:12px;
+            box-shadow:0 2px 6px rgba(0,0,0,.06);
+            margin-bottom:10px;
+        }
+        .card-title{
+            font-size:14px;
+            font-weight:600;
+        }
+        .card-meta{
+            font-size:11px;
+            color:#777;
+            margin-top:4px;
+            margin-bottom:3px;
+        }
+        .card-desc{
+            font-size:13px;
+            color:#555;
+        }
+
+        /* MENU ICON BERANDA */
+        .menu-section-title{
+            font-size:14px;
+            font-weight:600;
+            margin:12px 0 6px;
+        }
+
+        .menu-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:12px;
+            margin-bottom:14px;
+        }
+
+        .menu-link{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .menu-box{
+            background:#fff;
+            padding:12px 6px;
+            border-radius:12px;
+            text-align:center;
+            box-shadow:0 2px 6px rgba(0,0,0,.08);
+            cursor:pointer;
+            transition:.2s;
+        }
+        .menu-box:hover{
+            transform:translateY(-3px);
+        }
+        .menu-icon{
+            width:45px;
+            height:45px;
+            background:#e3f2fd;
+            color:#1e88e5;
+            margin:auto;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:20px;
+        }
+        .menu-title{
+            font-size:12px;
+            font-weight:500;
+            margin-top:6px;
+        }
+
+        /* SUB-BLOCK INFO DI BERANDA */
+        .sub-block{
+            background:#fff;
+            border-radius:12px;
+            padding:10px 12px;
+            margin-bottom:10px;
+            box-shadow:0 2px 6px rgba(0,0,0,.05);
+        }
+        .sub-block h3{
+            font-size:14px;
+            margin-bottom:4px;
+        }
+        .sub-block p, .sub-block li{
+            font-size:13px;
+            color:#555;
+        }
+        .sub-block ul{
+            padding-left:18px;
+            margin-top:4px;
+        }
+
+        /* GALERI */
+        .gallery-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:6px;
+        }
+        .gallery-grid img{
+            width:100%;
+            height:90px;
+            object-fit:cover;
+            border-radius:8px;
+            transition:.3s;
+        }
+        .gallery-grid img:hover{
+            transform:scale(1.05);
         }
 
         /* FOOTER NAV */
-        .footer-nav {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: #fff;
-            box-shadow: 0 -3px 10px rgba(0,0,0,.1);
-            padding: 6px 0 8px;
-            z-index: 20;
+        .footer-nav{
+            position:fixed;
+            bottom:0;
+            left:0;
+            right:0;
+            background:#fff;
+            padding:6px 0 10px;
+            box-shadow:0 -3px 10px rgba(0,0,0,.1);
+            z-index:40;
+        }
+        .footer-nav-inner{
+            max-width:900px;
+            margin:auto;
+            display:flex;
+            justify-content:space-around;
+        }
+        .nav-item{
+            text-align:center;
+            font-size:11px;
+            color:#75829a;
+            cursor:pointer;
+        }
+        .nav-icon{
+            font-size:18px;
+            display:block;
+            margin-bottom:2px;
+        }
+        .nav-item.active{
+            color:#1e88e5;
+            font-weight:600;
         }
 
-        .footer-nav-inner {
-            max-width: 900px;
-            margin: auto;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .nav-item {
-            text-align: center;
-            font-size: 11px;
-            color: #75829a;
-            cursor: pointer;
-        }
-
-        .nav-icon { font-size: 18px; display: block; }
-        .nav-item.active { color: #1e88e5; font-weight: bold; }
-
-        @media (min-width: 768px) {
-            .nav-icon { font-size: 19px; }
-            .gallery-grid img { height: 120px; }
+        @media (min-width:768px){
+            .banner-wrapper{height:180px;}
+            .banner-images img{height:180px;}
+            .gallery-grid img{height:110px;}
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="school-name">SDN Contoh Sejahtera</div>
-    <div class="school-sub">Jl. Pendidikan No. 123, Kota Belajar</div>
-    <div class="tagline">“Berkarakter, Berprestasi, Berbudaya Digital”</div>
+    <div class="header-inner">
+        <!-- GANTI LOGO DI SINI -->
+        <img src="LOGO_SEKOLAH.png" class="school-logo" alt="Logo YPP An-Nur Al-Mustafa">
+        <div class="header-text">
+            <div class="school-title">YPP An-Nur Al-Mustafa</div>
+            <div class="school-title">Cikarang Barat</div>
+        </div>
+    </div>
 </header>
 
 <main class="container">
 
+    <!-- BANNER SLIDE -->
+    <div class="banner-wrapper">
+        <div class="banner-images" id="bannerImages">
+            <!-- GANTI FOTO BANNER SESUAI KEGIATAN SEKOLAH -->
+            <img src="https://picsum.photos/id/29/800/300" alt="Banner 1">
+            <img src="https://picsum.photos/id/25/800/300" alt="Banner 2">
+            <img src="https://picsum.photos/id/237/800/300" alt="Banner 3">
+        </div>
+        <div class="banner-indicator">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
     <!-- HERO -->
     <div class="hero-card">
-        <div class="hero-badge">Info Sekolah</div>
-        <div class="hero-title">Selamat Datang di Website Resmi SDN Contoh Sejahtera</div>
-        <p class="hero-text">
-            Akses berita sekolah, profil, guru, galeri, dan layanan sekolah langsung dari HP Anda.
+        <div class="hero-badge">Informasi Utama</div>
+        <div class="hero-title">Selamat Datang di YPP An-Nur Al-Mustafa</div>
+        <p style="font-size:13px;color:#555;margin-top:6px;">
+            Berita yayasan, galeri kegiatan belajar, informasi guru, dan layanan PPDB online.
         </p>
     </div>
 
     <!-- BERANDA -->
     <section id="section-beranda" class="active">
-        <h2>Pengumuman Terbaru</h2>
+        <h2>Pengumuman</h2>
 
         <div class="card">
             <div class="card-title">PPDB 2025/2026 Dibuka</div>
             <div class="card-meta">10 Januari 2025</div>
             <div class="card-desc">
-                Pendaftaran online tersedia pada menu <b>PPDB</b>.
+                Pendaftaran peserta didik baru dapat dilakukan melalui menu <b>PPDB</b> di bagian bawah.
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-title">Kegiatan Class Meeting</div>
-            <div class="card-meta">05 Januari 2025</div>
-            <div class="card-desc">
-                Lomba futsal, seni, dan cerdas cermat.
-            </div>
+        <!-- MENU ICON BERANDA -->
+        <div class="menu-section-title">Menu Informasi Cepat</div>
+        <div class="menu-grid">
+
+            <a href="#blok-prestasi" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div class="menu-title">Prestasi</div>
+                </div>
+            </a>
+
+            <a href="#blok-ekskul" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <div class="menu-title">Ekstrakurikuler</div>
+                </div>
+            </a>
+
+            <a href="#blok-program" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="menu-title">Program Unggulan</div>
+                </div>
+            </a>
+
+            <a href="#blok-guru-staff" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+                    <div class="menu-title">Guru & Staff</div>
+                </div>
+            </a>
+
+            <a href="#blok-fasilitas" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="menu-title">Fasilitas</div>
+                </div>
+            </a>
+
+            <a href="#blok-kegiatan-harian" class="menu-link">
+                <div class="menu-box">
+                    <div class="menu-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="menu-title">Kegiatan Harian</div>
+                </div>
+            </a>
+
         </div>
+
+        <!-- BLOK INFORMASI DETAIL -->
+        <div id="blok-prestasi" class="sub-block">
+            <h3>Prestasi Siswa</h3>
+            <p>Beberapa prestasi yang pernah diraih siswa YPP An-Nur Al-Mustafa:</p>
+            <ul>
+                <li>Juara 1 Lomba Tahfidz Juz 30 Tingkat Kecamatan</li>
+                <li>Juara 2 Olimpiade Matematika Tingkat Kabupaten</li>
+                <li>Juara Harapan 1 Lomba Adzan dan Tilawah</li>
+            </ul>
+        </div>
+
+        <div id="blok-ekskul" class="sub-block">
+            <h3>Ekstrakurikuler</h3>
+            <p>Peserta didik dapat mengembangkan bakat melalui berbagai kegiatan:</p>
+            <ul>
+                <li>EKSKUL Tahfidz & Tilawah Al-Qur'an</li>
+                <li>EKSKUL Futsal & Olahraga</li>
+                <li>EKSKUL Pramuka</li>
+                <li>EKSKUL Komputer & Multimedia</li>
+                <li>EKSKUL Hadroh / Marawis</li>
+            </ul>
+        </div>
+
+        <div id="blok-program" class="sub-block">
+            <h3>Program Unggulan</h3>
+            <p>Program unggulan yayasan antara lain:</p>
+            <ul>
+                <li>Program Tahfidz Harian & Setoran Rutin</li>
+                <li>Program Literasi & Numerasi Berbasis Proyek</li>
+                <li>Program Pembiasaan Adab & Akhlak Islami</li>
+            </ul>
+        </div>
+
+        <div id="blok-guru-staff" class="sub-block">
+            <h3>Guru & Staff</h3>
+            <p>Guru dan tenaga kependidikan berasal dari lulusan terbaik yang berpengalaman dalam pendidikan formal dan diniyah.</p>
+            <p>Data lengkap guru dapat dilihat juga pada menu <b>Guru</b> di bagian bawah.</p>
+        </div>
+
+        <div id="blok-fasilitas" class="sub-block">
+            <h3>Fasilitas</h3>
+            <ul>
+                <li>Ruang kelas nyaman & ber-AC (opsional, sesuaikan)</li>
+                <li>Ruang Tahfidz</li>
+                <li>Ruang Komputer</li>
+                <li>Lapangan olahraga</li>
+                <li>Musholla</li>
+                <li>Perpustakaan mini</li>
+            </ul>
+        </div>
+
+        <div id="blok-kegiatan-harian" class="sub-block">
+            <h3>Kegiatan Harian</h3>
+            <p>Contoh rutinitas harian siswa:</p>
+            <ul>
+                <li>Apel pagi & doa bersama</li>
+                <li>Tahfidz / muroja'ah</li>
+                <li>Kegiatan pembelajaran intrakurikuler</li>
+                <li>Shalat Dzuhur berjamaah</li>
+                <li>Kegiatan ekstrakurikuler (jadwal tertentu)</li>
+            </ul>
+        </div>
+
     </section>
 
     <!-- PROFIL -->
     <section id="section-profil">
-        <h2>Profil Sekolah</h2>
-        <p>SDN Contoh Sejahtera berkomitmen mencetak siswa yang berakhlak, berprestasi, dan melek teknologi.</p>
+        <h2>Profil Yayasan</h2>
+        <p style="font-size:13px;">
+            YPP An-Nur Al-Mustafa berfokus pada pendidikan berbasis akhlak, adab, dan penguatan karakter,
+            disertai pembelajaran akademik dan literasi digital.
+        </p>
     </section>
 
     <!-- GURU -->
@@ -183,97 +471,93 @@
         <h2>Data Guru</h2>
 
         <div class="card">
-            <div class="card-title">Bapak Andi Saputra</div>
+            <div class="card-title">Ust. Andi Saputra</div>
             <div class="card-meta">Kepala Sekolah</div>
         </div>
 
         <div class="card">
-            <div class="card-title">Ibu Rina Kartika</div>
-            <div class="card-meta">Guru Kelas 1</div>
+            <div class="card-title">Usth. Rina Kartika</div>
+            <div class="card-meta">Guru Kelas</div>
         </div>
     </section>
 
-    <!-- GALERI BARU -->
+    <!-- GALERI -->
     <section id="section-galeri">
         <h2>Galeri Kegiatan Belajar</h2>
 
         <div class="gallery-grid">
-
-            <!-- Ganti dengan foto-foto sekolahmu -->
-            <img src="https://picsum.photos/200/150?random=1">
-            <img src="https://picsum.photos/200/150?random=2">
-            <img src="https://picsum.photos/200/150?random=3">
-            <img src="https://picsum.photos/200/150?random=4">
-            <img src="https://picsum.photos/200/150?random=5">
-            <img src="https://picsum.photos/200/150?random=6">
-
+            <!-- GANTI DENGAN FOTO-FOTO KEGIATAN SEKOLAH -->
+            <img src="https://picsum.photos/200/150?random=1" alt="Foto 1">
+            <img src="https://picsum.photos/200/150?random=2" alt="Foto 2">
+            <img src="https://picsum.photos/200/150?random=3" alt="Foto 3">
+            <img src="https://picsum.photos/200/150?random=4" alt="Foto 4">
+            <img src="https://picsum.photos/200/150?random=5" alt="Foto 5">
+            <img src="https://picsum.photos/200/150?random=6" alt="Foto 6">
         </div>
-    </section>
-
-    <!-- KONTAK -->
-    <section id="section-kontak">
-        <h2>Kontak Sekolah</h2>
-        <p>Untuk pertanyaan, silakan kirim pesan melalui WhatsApp atau datang ke sekolah.</p>
     </section>
 
 </main>
 
-<!-- FOOTER NAV -->
+<!-- FOOTER -->
 <nav class="footer-nav">
     <div class="footer-nav-inner">
-
         <div class="nav-item active" data-target="section-beranda">
             <span class="nav-icon"><i class="fa-solid fa-house"></i></span>Beranda
         </div>
-
         <div class="nav-item" data-target="section-profil">
-            <span class="nav-icon"><i class="fa-solid fa-school"></i></span>Profil
+            <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>Profil
         </div>
-
         <div class="nav-item" data-target="section-guru">
             <span class="nav-icon"><i class="fa-solid fa-chalkboard-user"></i></span>Guru
         </div>
-
         <div class="nav-item" data-target="section-galeri">
             <span class="nav-icon"><i class="fa-solid fa-image"></i></span>Galeri
         </div>
-
         <div class="nav-item" data-link="https://forms.gle/CONTOH_LINK_PPDB">
             <span class="nav-icon"><i class="fa-solid fa-user-plus"></i></span>PPDB
         </div>
-
     </div>
 </nav>
 
 <script>
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('main section');
+/* FOOTER MENU */
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('main section');
 
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const link = item.getAttribute('data-link');
-            const targetId = item.getAttribute('data-target');
+navItems.forEach(item=>{
+    item.addEventListener('click',()=>{
+        const link = item.getAttribute('data-link');
+        const target = item.getAttribute('data-target');
 
-            // Jika menu PPDB
-            if (link) {
-                window.open(link, '_blank');
-                return;
-            }
+        if(link){
+            window.open(link,'_blank');
+            return;
+        }
 
-            navItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+        navItems.forEach(i=>i.classList.remove('active'));
+        item.classList.add('active');
 
-            sections.forEach(sec => sec.classList.remove('active'));
+        sections.forEach(s=>s.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
 
-            const target = document.getElementById(targetId);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
+        window.scrollTo({top:0,behavior:'smooth'});
     });
+});
+
+/* SLIDE BANNER */
+let index = 0;
+const slider = document.getElementById('bannerImages');
+const dots = document.querySelectorAll('.dot');
+
+function nextSlide(){
+    index = (index + 1) % 3;
+    slider.style.transform = `translateX(-${index*100}%)`;
+    dots.forEach(d=>d.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+setInterval(nextSlide,5000);
 </script>
 
 </body>
 </html>
-
