@@ -8,6 +8,46 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-menu {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        @media (min-width: 768px) {
+            .gallery-menu {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .gallery-card h3 {
+            margin: 0;
+            padding: 12px;
+            font-size: 18px;
+            text-align: center;
+            background: #f4f4f4;
+            font-weight: 600;
+        }
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
 <body>
 
@@ -23,18 +63,34 @@
 
 <main class="container">
     <div class="page-hero-img">
-        <img src="https://picsum.photos/id/1003/800/400" alt="Kegiatan Belajar di Kelas">
+        <img src="https://picsum.photos/id/1003/800/400" alt="Foto Kegiatan">
     </div>
 
-    <h2 class="page-title">Galeri Kegiatan Belajar</h2>
+    <h2 class="page-title">Pilihan Galeri</h2>
 
-    <div class="gallery-grid">
-        <img src="https://picsum.photos/200/150?random=11" alt="Foto 1">
-        <img src="https://picsum.photos/200/150?random=12" alt="Foto 2">
-        <img src="https://picsum.photos/200/150?random=13" alt="Foto 3">
-        <img src="https://picsum.photos/200/150?random=14" alt="Foto 4">
-        <img src="https://picsum.photos/200/150?random=15" alt="Foto 5">
-        <img src="https://picsum.photos/200/150?random=16" alt="Foto 6">
+    <div class="gallery-menu">
+
+        <a href="galeri-kegiatan.html">
+            <div class="gallery-card">
+                <img src="https://picsum.photos/400/200?random=51" alt="Galeri Kegiatan Belajar">
+                <h3>Kegiatan Belajar</h3>
+            </div>
+        </a>
+
+        <a href="galeri-prestasi.html">
+            <div class="gallery-card">
+                <img src="https://picsum.photos/400/200?random=52" alt="Galeri Prestasi Siswa">
+                <h3>Prestasi Siswa</h3>
+            </div>
+        </a>
+
+        <a href="galeri-ekstrakurikuler.html">
+            <div class="gallery-card">
+                <img src="https://picsum.photos/400/200?random=53" alt="Galeri Ekstrakurikuler">
+                <h3>Ekstrakurikuler</h3>
+            </div>
+        </a>
+
     </div>
 </main>
 
