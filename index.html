@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <h2 class="page-title">Selamat Datang di YPP An-Nur Al-Mustafa</h2>
+    <h2 id="rotatingText" class="page-title welcome-text">Selamat Datang di YPP An-Nur Al-Mustafa</h2>
 
     <!-- MENU GRID BERANDA -->
     <div class="menu-grid">
@@ -219,5 +219,32 @@ setInterval(() => {
 }, 5000);
 </script>
 
+
+<script>
+// TEKS BERGANTI OTOMATIS DI BAWAH SLIDER
+const textList = [
+    "Selamat Datang di YPP An-Nur Al-Mustafa",
+    "Mewujudkan Generasi Berakhlak Mulia dan Berprestasi",
+    "Lingkungan Belajar Islami, Nyaman, dan Menyenangkan",
+    "Mendidik dengan Keteladanan dan Kasih Sayang",
+    "Bersama Kita Bangun Masa Depan Anak yang Gemilang"
+];
+
+let currentTextIndex = 0;
+const rotatingEl = document.getElementById("rotatingText");
+
+function changeWelcomeText() {
+    if (!rotatingEl) return;
+    currentTextIndex = (currentTextIndex + 1) % textList.length;
+    rotatingEl.style.opacity = 0;
+    setTimeout(() => {
+        rotatingEl.textContent = textList[currentTextIndex];
+        rotatingEl.style.opacity = 1;
+    }, 400);
+}
+
+// mulai setelah halaman siap
+setInterval(changeWelcomeText, 5000);
+</script>
 </body>
 </html>
