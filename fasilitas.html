@@ -8,6 +8,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
 </head>
 <body>
 
@@ -53,9 +54,10 @@
                 <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>Profil
             </div>
         </a>
-        <a href="berita.html">
+        <a href="berita.html" id="footerBeritaLink">
             <div class="nav-item">
                 <span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span>Berita
+                <span id="badgeBerita" class="footer-badge" style="display:none;">0</span>
             </div>
         </a>
         <a href="galeri.html">
@@ -71,5 +73,29 @@
     </div>
 </nav>
 
+
+<script>
+// NOTIFIKASI BERITA BARU (otomatis per pengguna, pakai localStorage)
+(function() {
+    if (typeof CURRENT_NEWS_VERSION === "undefined") return;
+
+    const badge = document.getElementById("badgeBerita");
+    const link = document.getElementById("footerBeritaLink");
+    if (!badge || !link) return;
+
+    const lastSeen = parseInt(localStorage.getItem("lastSeenNewsVersion") || "0", 10);
+    const unseen = CURRENT_NEWS_VERSION - lastSeen;
+
+    if (unseen > 0) {
+        badge.textContent = unseen;
+        badge.style.display = "inline-block";
+    }
+
+    link.addEventListener("click", function() {
+        localStorage.setItem("lastSeenNewsVersion", String(CURRENT_NEWS_VERSION));
+        badge.style.display = "none";
+    });
+})();
+</script>
 </body>
 </html>

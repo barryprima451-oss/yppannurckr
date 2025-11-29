@@ -8,6 +8,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
 </head>
 <body>
 
@@ -27,19 +28,19 @@
     <div class="hero-slider">
         <div class="slides">
             <div class="slide active">
-                <img src="https://picsum.photos/id/1003/800/400" alt="Kegiatan belajar di kelas">
+                <img src="img/4.png" alt="Kegiatan belajar di kelas">
             </div>
             <div class="slide">
-                <img src="https://picsum.photos/id/1011/800/400" alt="Kegiatan ekstrakurikuler siswa">
+                <img src="img/3.png" alt="Kegiatan ekstrakurikuler siswa">
             </div>
             <div class="slide">
-                <img src="https://picsum.photos/id/1025/800/400" alt="Suasana lomba dan prestasi">
+                <img src="img/Slide 4.png" alt="Suasana lomba dan prestasi">
             </div>
             <div class="slide">
-                <img src="https://picsum.photos/id/1035/800/400" alt="Kegiatan keagamaan di sekolah">
+                <img src="img/Slide 3.png" alt="Kegiatan keagamaan di sekolah">
             </div>
             <div class="slide">
-                <img src="https://picsum.photos/id/1041/800/400" alt="Lingkungan sekolah yang bersih dan rapi">
+                <img src="img/Slide 5.png" alt="Lingkungan sekolah yang bersih dan rapi">
             </div>
         </div>
         <div class="dots">
@@ -106,14 +107,16 @@
             <a href="berita-tasmi.html">
                 <div class="berita-item">
                     <div class="berita-thumb">
-                        <img src="https://picsum.photos/id/1067/300/200" alt="Tasmi Al-Qur'an Siswa">
+                        <img src="img/slide 1.png" alt="Tasmi Al-Qur'an Siswa">
                     </div>
                     <div class="berita-content">
                         <div class="berita-title">Tasmi Al-Qur'an Siswa YPP An-Nur Al-Mustafa</div>
                         <div class="berita-meta">Kegiatan Keagamaan</div>
                         <div class="berita-snippet">
+
                             Kegiatan tasmi Al-Qur'an untuk menumbuhkan kecintaan siswa terhadap Al-Qur'an
                             dan melatih kepercayaan diri di hadapan teman-teman.
+
                         </div>
                     </div>
                 </div>
@@ -128,8 +131,10 @@
                         <div class="berita-title">Lomba Kebersihan Kelas Meningkatkan Disiplin Siswa</div>
                         <div class="berita-meta">Lomba & Kedisiplinan</div>
                         <div class="berita-snippet">
+
                             Setiap kelas berkompetisi menjaga kebersihan dan kerapian ruangan sebagai bagian
                             dari pembiasaan karakter peduli lingkungan.
+
                         </div>
                     </div>
                 </div>
@@ -144,8 +149,10 @@
                         <div class="berita-title">Informasi & Pengumuman Penting Sekolah</div>
                         <div class="berita-meta">Informasi Umum</div>
                         <div class="berita-snippet">
+
                             Lihat rangkuman informasi dan pengumuman terbaru terkait kegiatan,
                             akademik, dan program sekolah lainnya.
+
                         </div>
                     </div>
                 </div>
@@ -169,9 +176,10 @@
                 <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>Profil
             </div>
         </a>
-        <a href="berita.html">
+        <a href="berita.html" id="footerBeritaLink">
             <div class="nav-item">
                 <span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span>Berita
+                <span id="badgeBerita" class="footer-badge" style="display:none;">0</span>
             </div>
         </a>
         <a href="galeri.html">
@@ -245,6 +253,30 @@ function changeWelcomeText() {
 
 // mulai setelah halaman siap
 setInterval(changeWelcomeText, 5000);
+</script>
+
+<script>
+// NOTIFIKASI BERITA BARU (otomatis per pengguna, pakai localStorage)
+(function() {
+    if (typeof CURRENT_NEWS_VERSION === "undefined") return;
+
+    const badge = document.getElementById("badgeBerita");
+    const link = document.getElementById("footerBeritaLink");
+    if (!badge || !link) return;
+
+    const lastSeen = parseInt(localStorage.getItem("lastSeenNewsVersion") || "0", 10);
+    const unseen = CURRENT_NEWS_VERSION - lastSeen;
+
+    if (unseen > 0) {
+        badge.textContent = unseen;
+        badge.style.display = "inline-block";
+    }
+
+    link.addEventListener("click", function() {
+        localStorage.setItem("lastSeenNewsVersion", String(CURRENT_NEWS_VERSION));
+        badge.style.display = "none";
+    });
+})();
 </script>
 </body>
 </html>
