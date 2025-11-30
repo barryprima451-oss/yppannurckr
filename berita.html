@@ -8,8 +8,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="config.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -22,108 +22,36 @@
     </div>
 </header>
 
-
 <main class="container">
+
     <div class="page-hero-img">
-        <img src="https://picsum.photos/id/1025/800/400" alt="Foto Kegiatan Siswa">
+        <img src="img/Berita.png" alt="Foto Kegiatan Sekolah">
     </div>
 
     <h2 class="page-title">Berita Terbaru</h2>
 
     <div class="news-list">
 
+        <!-- HANYA 1 BERITA: MBG (Makan Bergizi Gratis) -->
         <a href="berita-tasmi.html" class="news-item-link">
             <div class="news-item">
                 <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=71" alt="Kegiatan Tasmi Al-Qur'an">
+                    <img src="https://i.pinimg.com/1200x/bb/3f/23/bb3f238d2e2a5a397745180f23cfe16d.jpg" alt="Program MBG Makan Bergizi Gratis">
                 </div>
                 <div class="news-content">
-                    <div class="news-title">Kegiatan Tasmi' Al-Qur'an</div>
-                    <div class="news-meta">05 Januari 2025</div>
+                    <div class="news-title">Program MBG (Makan Bergizi Gratis)</div>
+                    <div class="news-meta">Senin, 02 Desember 2025</div>
                     <div class="news-desc">
-                        Siswa-siswi mengikuti kegiatan tasmi' juz 30 sebagai bagian dari program tahfidz rutin di sekolah.
+                        Program Makan Bergizi Gratis untuk siswa-siswi YPP An-Nur Al-Mustafa akan resmi dimulai pada hari Senin besok.
                         <span style="color:#1e88e5;">Selengkapnya</span>
                     </div>
                 </div>
             </div>
         </a>
 
-        <a href="berita-kebersihan.html" class="news-item-link">
-            <div class="news-item">
-                <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=72" alt="Lomba Kebersihan Kelas">
-                </div>
-                <div class="news-content">
-                    <div class="news-title">Lomba Kebersihan Kelas</div>
-                    <div class="news-meta">20 Desember 2024</div>
-                    <div class="news-desc">
-                        Setiap kelas mengikuti lomba kebersihan untuk membiasakan hidup bersih dan sehat di lingkungan sekolah.
-                        <span style="color:#1e88e5;">Selengkapnya</span>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="berita.html" class="news-item-link">
-            <div class="news-item">
-                <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=73" alt="Kegiatan Sekolah Lainnya">
-                </div>
-                <div class="news-content">
-                    <div class="news-title">Kegiatan Sekolah Lainnya</div>
-                    <div class="news-meta">Update Berkala</div>
-                    <div class="news-desc">
-                        Ikuti informasi terbaru seputar kegiatan, program, dan agenda penting lainnya di YPP An-Nur Al-Mustafa.
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="berita.html" class="news-item-link">
-            <div class="news-item">
-                <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=73" alt="Kegiatan Sekolah Lainnya">
-                </div>
-                <div class="news-content">
-                    <div class="news-title">Kegiatan Sekolah Lainnya</div>
-                    <div class="news-meta">Update Berkala</div>
-                    <div class="news-desc">
-                        Ikuti informasi terbaru seputar kegiatan, program, dan agenda penting lainnya di YPP An-Nur Al-Mustafa.
-                    </div>
-                </div>
-            </div>
-        </a>
-<a href="berita.html" class="news-item-link">
-            <div class="news-item">
-                <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=73" alt="Kegiatan Sekolah Lainnya">
-                </div>
-                <div class="news-content">
-                    <div class="news-title">Kegiatan Sekolah Lainnya</div>
-                    <div class="news-meta">Update Berkala</div>
-                    <div class="news-desc">
-                        Ikuti informasi terbaru seputar kegiatan, program, dan agenda penting lainnya di YPP An-Nur Al-Mustafa.
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="berita.html" class="news-item-link">
-            <div class="news-item">
-                <div class="news-thumb">
-                    <img src="https://picsum.photos/200/150?random=73" alt="Kegiatan Sekolah Lainnya">
-                </div>
-                <div class="news-content">
-                    <div class="news-title">Kegiatan Sekolah Lainnya</div>
-                    <div class="news-meta">Update Berkala</div>
-                    <div class="news-desc">
-                        Ikuti informasi terbaru seputar kegiatan, program, dan agenda penting lainnya di YPP An-Nur Al-Mustafa.
-                    </div>
-                </div>
-            </div>
-        </a>
     </div>
-</main>
 
+</main>
 
 <nav class="footer-nav">
     <div class="footer-nav-inner">
@@ -155,29 +83,5 @@
     </div>
 </nav>
 
-
-<script>
-// NOTIFIKASI BERITA BARU (otomatis per pengguna, pakai localStorage)
-(function() {
-    if (typeof CURRENT_NEWS_VERSION === "undefined") return;
-
-    const badge = document.getElementById("badgeBerita");
-    const link = document.getElementById("footerBeritaLink");
-    if (!badge || !link) return;
-
-    const lastSeen = parseInt(localStorage.getItem("lastSeenNewsVersion") || "0", 10);
-    const unseen = CURRENT_NEWS_VERSION - lastSeen;
-
-    if (unseen > 0) {
-        badge.textContent = unseen;
-        badge.style.display = "inline-block";
-    }
-
-    link.addEventListener("click", function() {
-        localStorage.setItem("lastSeenNewsVersion", String(CURRENT_NEWS_VERSION));
-        badge.style.display = "none";
-    });
-})();
-</script>
 </body>
 </html>

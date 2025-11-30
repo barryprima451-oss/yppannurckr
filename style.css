@@ -28,6 +28,51 @@ header {
     z-index: 99;
 }
 
+/* BAR PENCARIAN STICKY DI BAWAH HEADER */
+.search-bar-sticky {
+    position: sticky;
+    top: 56px;
+    z-index: 98;
+    background: #f5f5f5;
+    padding: 8px 0;
+}
+
+.search-bar-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.search-icon {
+    font-size: 14px;
+    color: #0f766e;
+}
+
+.search-bar-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 13px;
+    color: #333;
+    background: transparent;
+}
+
+/* Hilangkan outline biru di beberapa browser saat fokus */
+.search-bar-input:focus {
+    outline: none;
+}
+
+/* beri jarak antara search dengan konten di bawahnya */
+.hero-slider {
+    margin-top: 8px;
+}
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -250,6 +295,84 @@ header {
     gap: 10px;
 }
 
+/* ARTIKEL PILIHAN DI BERANDA */
+.artikel-section {
+    margin-top: 20px;
+}
+
+.artikel-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0f766e;
+}
+
+.artikel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.artikel-item {
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.artikel-thumb {
+    flex: 0 0 80px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.artikel-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artikel-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artikel-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2933;
+    margin-bottom: 4px;
+}
+
+.artikel-meta {
+    font-size: 11px;
+    color: #0f766e;
+    margin-bottom: 4px;
+}
+
+.artikel-snippet {
+    font-size: 11px;
+    color: #555;
+}
+
+/* Subjudul halaman (digunakan di artikel.html) */
+.page-subtitle {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Jarak list artikel di halaman artikel */
+.artikel-page-list {
+    margin-top: 10px;
+}
+
+
 .berita-item {
     display: flex;
     gap: 10px;
@@ -421,12 +544,13 @@ header {
     padding-bottom: 10px;
 }
 
-.guru-card-photo, .guru-card-box img, .staf-card-photo, .guru-card-photo, .guru-card-box img, .staf-card-photo, .staf-card-box img {
-    width:100%;
-    aspect-ratio:4/3;
-    object-fit:cover;
-    display:block;
-    background:#bfdbfe;
+.guru-card-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    background: #bfdbfe;
 }
 
 .guru-card-name {
@@ -671,6 +795,30 @@ header {
 .maps-click-area { display:block; }
 .maps-embed-wrapper iframe { pointer-events:none; }
 
+.btn-maps-profil {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: #0f766e;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    margin-top: 6px;
+}
+
+.btn-maps-profil i {
+    font-size: 16px;
+}
+
+.btn-maps-profil:active {
+    transform: scale(0.97);
+}
+
+
 
 /* PROGRAM UNGGULAN GRID */
 .program-grid {
@@ -717,7 +865,6 @@ header {
     }
 }
 
-
 /* HILANGKAN EFEK KILAP / TAP HIGHLIGHT & BLOK TEKS */
 * {
     -webkit-tap-highlight-color: transparent;
@@ -737,10 +884,162 @@ body {
     -webkit-touch-callout: none;
 }
 
-/* JIKA ADA FORM / INPUT, TETAP BOLEH DIISI & DISELEKSI */
+/* IZINKAN SELEKSI UNTUK INPUT / TEXTAREA SAJA */
 input, textarea {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
+}
+
+
+/* KARTU INFORMASI SEDERHANA */
+.info-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 10px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.primary-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.primary-btn.disabled-btn {
+    background: #9ca3af;
+    cursor: default;
+}
+
+
+/* KALDIK SD & SMP */
+.kaldik-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.kaldik-section {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.kaldik-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0f766e;
+}
+
+.kaldik-tagline {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.kaldik-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.kaldik-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: #16a34a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.kaldik-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.kaldik-date {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/* EFEK GOYANG PADA TOMBOL MENU BERANDA */
+@keyframes navShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+.nav-item.nav-shake {
+    animation: navShake 0.35s ease;
+}
+
+
+/* EKSTRAKURIKULER GRID */
+.ekskul-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.ekskul-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.ekskul-img-wrap img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.ekskul-body {
+    padding: 8px 10px 12px;
+}
+
+.ekskul-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.ekskul-body p {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.5;
+    text-align: left;
+}
+
+@media (min-width: 600px) {
+    .ekskul-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Makan Bergizi Geratis</title>
+    <title>Perpustakaan Digital - YPP An-Nur Al-Mustafa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,28 +22,25 @@
     </div>
 </header>
 
-<main class="container news-detail-main">
-
-    <a href="berita.html" class="back-link">
-        <i class="fa-solid fa-chevron-left"></i> Kembali ke Berita
-    </a>
-
+<main class="container">
     <div class="page-hero-img">
-        <img src="https://i.pinimg.com/1200x/bb/3f/23/bb3f238d2e2a5a397745180f23cfe16d.jpg" alt="Kegiatan Tasmi Al-Quran">
+        <img src="https://picsum.photos/id/1045/800/400" alt="Perpustakaan Digital">
     </div>
 
-    <h2 class="page-title">Makan Bergizi Geratis</h2>
-    <p class="card-meta">Diposting: 05 Januari 2025</p>
+    <h2 class="page-title">Perpustakaan Digital</h2>
 
-    <div class="sub-block">
-        <p>
-           Program Makan Bergizi Gratis untuk siswa-siswi YPP An-Nur Al-Mustafa akan resmi dimulai pada hari Senin besok..
-        </p>
-        <p style="margin-top:6px;">
-            Para siswa dan siswi mulai besok akan mendapatkan makan bergizi geratis, insyaallah aman dan higenis
-        </p>
+    <div class="sub-block info-card">
+        <h3>Halaman Dalam Tahap Pengembangan</h3>
+        <p>Perpustakaan digital YPP An-Nur Al-Mustafa saat ini masih dalam proses pengembangan oleh tim developer.
+            Nantinya, halaman ini akan berisi koleksi buku digital, modul, dan bahan ajar yang dapat diakses oleh
+            siswa dan orang tua.</p>
+        <p>Untuk sementara, koleksi bahan bacaan digital dapat diakses melalui Google Drive sekolah.</p>
+        <a href="https://drive.google.com" target="_blank" class="primary-btn">
+            Buka Perpustakaan di Google Drive
+        </a>
     </div>
 </main>
+
 
 <nav class="footer-nav">
     <div class="footer-nav-inner">
@@ -57,9 +54,10 @@
                 <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>Profil
             </div>
         </a>
-        <a href="berita.html">
-            <div class="nav-item active">
+        <a href="berita.html" id="footerBeritaLink">
+            <div class="nav-item">
                 <span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span>Berita
+                <span id="badgeBerita" class="footer-badge" style="display:none;">0</span>
             </div>
         </a>
         <a href="galeri.html">
