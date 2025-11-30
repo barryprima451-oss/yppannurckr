@@ -421,11 +421,12 @@ header {
     padding-bottom: 10px;
 }
 
-.guru-card-photo {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    background: #bfdbfe;
+.guru-card-photo, .guru-card-box img, .staf-card-photo, .guru-card-photo, .guru-card-box img, .staf-card-photo, .staf-card-box img {
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+    background:#bfdbfe;
 }
 
 .guru-card-name {
@@ -484,4 +485,287 @@ header {
     min-width: 16px;
     text-align: center;
     line-height: 1;
+}
+
+
+/* Kegiatan Harian - setiap kegiatan dengan foto, judul, dan deskripsi */
+.kegiatan-intro {
+    text-align: center;
+}
+
+.kegiatan-intro p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.kegiatan-list {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.kegiatan-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.kegiatan-img-wrapper {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+}
+
+.kegiatan-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.kegiatan-body {
+    padding: 10px 14px 12px;
+}
+
+.kegiatan-body h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f766e;
+    margin-bottom: 4px;
+}
+
+.kegiatan-body p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #444;
+    text-align: justify;
+}
+
+@media (min-width: 600px) {
+    .kegiatan-card {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+}
+
+
+/* PRESTASI GRID CARDS */
+.prestasi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.prestasi-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.prestasi-img-wrap img {
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+}
+
+.prestasi-body {
+    padding: 8px 10px 12px;
+}
+
+.prestasi-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.prestasi-body p {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #0f766e;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+@media (min-width: 600px) {
+    .prestasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* PROFIL VISI & MISI GRID */
+.profil-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.profil-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.profil-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f766e;
+    margin-bottom: 6px;
+}
+
+.profil-card p,
+.profil-card li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* Lokasi / Maps */
+.lokasi-block {
+    margin-top: 18px;
+}
+
+.lokasi-text {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.lokasi-link {
+    color: #0f766e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.lokasi-link:hover {
+    text-decoration: underline;
+}
+
+.maps-embed-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+@media (min-width: 600px) {
+    .profil-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.maps-click-area { display:block; }
+.maps-embed-wrapper iframe { pointer-events:none; }
+
+
+/* PROGRAM UNGGULAN GRID */
+.program-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.program-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.program-img-wrap img {
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+}
+
+.program-body {
+    padding: 8px 10px 12px;
+}
+
+.program-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.program-body p {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.5;
+    text-align: left;
+}
+
+@media (min-width: 600px) {
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .guru-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* EKSTRAKURIKULER GRID */
+.ekskul-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.ekskul-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.ekskul-img-wrap img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.ekskul-body {
+    padding: 8px 10px 12px;
+}
+
+.ekskul-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.ekskul-body p {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.5;
+    text-align: left;
+}
+
+@media (min-width: 600px) {
+    .ekskul-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
