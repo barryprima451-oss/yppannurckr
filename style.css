@@ -1043,3 +1043,15 @@ input, textarea {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* Map frame on profil page */
+.map-container-profil {
+    width: 100%;
+    margin-top: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.map-container-profil iframe {
+    display: block;
+}
